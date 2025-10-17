@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Melanin's Test Site</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #333, #ffcc00);
+            color: #f2f2f2;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px #000;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.4s;
+            box-shadow: 2px 2px 5px #000;
+        }
+
+        .button:hover {
+            background-color: #ffcc00;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .page {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Melanin's Test Site</h1>
+
+    <!-- Navigation buttons -->
+    <div>
+        <button class="button" onclick="showPage('home')">Home</button>
+        <button class="button" onclick="showPage('welcome')">Welcome Page</button>
+        <a href="https://www.google.com" target="_blank" class="button">Google</a>
+        <a href="https://www.youtube.com" target="_blank" class="button">YouTube</a>
+    </div>
+
+    <!-- Pages -->
+    <div class="page" id="home" style="display:block;">
+        <h2>Home</h2>
+        <p>This is your test homepage. You can add more buttons or text here.</p>
+    </div>
+
+    <div class="page" id="welcome">
+        <h2>Welcome!</h2>
+        <p>Hello! This is the welcome page. 😎</p>
+        <p>Test your buttons and links freely.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
